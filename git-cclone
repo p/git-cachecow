@@ -4,7 +4,7 @@ import os, os.path, sys, subprocess, hashlib
 
 
 def cache_path(repo):
-    return os.path.join(os.environ['GIT_COW'], + hashlib.md5(repo).hexdigest() + '.git')
+    return os.path.join(os.environ['GIT_COW'], hashlib.md5(repo).hexdigest() + '.git')
 
 def is_cached(repo):
     path = cache_path(repo)
